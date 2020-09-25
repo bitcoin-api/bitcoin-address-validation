@@ -1,18 +1,12 @@
 {
-  "name": "bitcoin-address-validation",
+  "name": "@bitcoin-api/bitcoin-address-validation",
   "version": "1.0.2",
   "description": "Validate any Bitcoin address - Bech32, P2SH and P2PKH",
-  "homepage": "https://github.com/ruigomeseu/bitcoin-address-validation",
-  "bugs": "https://github.com/ruigomeseu/bitcoin-address-validation/issues",
-  "main": "./lib/index.cjs.js",
-  "module": "./lib/index.esm.js",
-  "unpkg": "./lib/index.umd.js",
-  "types": "./lib/types.d.ts",
+  "homepage": "https://github.com/bitcoin-api/bitcoin-address-validation",
+  "bugs": "https://github.com/bitcoin-api/bitcoin-address-validation/issues",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "rollup -c && mocha --recursive",
-    "build": "rimraf lib && rollup -c",
-    "cover": "nyc mocha",
-    "lint": "eslint src test"
+    "test": "echo 'bitcoin"
   },
   "keywords": [
     "address",
@@ -24,33 +18,17 @@
     "p2pkh"
   ],
   "author": {
-    "name": "Rui Gomes",
-    "email": "hello@ruigomes.me",
-    "url": "https://ruigomes.me"
+    "name": "Rui Gomes, Michael Stecky-Efantis"
   },
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ruigomeseu/bitcoin-address-validation"
+    "url": "https://github.com/bitcoin-api/bitcoin-address-validation"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
     "chai": "^4.2.0",
-    "codecov": "^3.1.0",
-    "cross-env": "^5.2.0",
-    "eslint": "^6.0.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
     "mocha": "^6.1.4",
-    "nyc": "^14.1.1",
-    "rimraf": "^2.6.3",
-    "rollup": "^1.1.2",
-    "rollup-plugin-commonjs": "^10.0.1",
-    "rollup-plugin-copy": "^3.3.0",
-    "rollup-plugin-node-builtins": "^2.1.2",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "nyc": "^14.1.1"
   },
   "dependencies": {
     "base-x": "^3.0.6",
