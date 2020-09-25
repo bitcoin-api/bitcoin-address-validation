@@ -1,11 +1,18 @@
-import baseX from 'base-x';
-import bech32 from 'bech32';
-import sha from 'sha.js';
-import { Buffer } from 'buffer';
+'use strict';
 
-const base58 = baseX('123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz');
+const baseX = require( 'base-x' );
+const bech32 = require( 'bech32' );
+const sha = require( 'sha.js' );
 
-const sha256 = payload => Buffer.from(sha('sha256').update(payload).digest());
+const base58 = baseX(
+    '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
+);
+
+const sha256 = Object.freeze( payload => Buffer.from(
+    
+    sha('sha256').update(payload).digest()
+));
+
 
 const addressTypes = {
   0x00: {
@@ -42,7 +49,7 @@ const validateBech32 = (address) => {
     bc: 'mainnet',
     tb: 'testnet',
     bcrt: 'regtest'
-  }
+  };
 
   const network = prefixesNetwork[decoded.prefix];
 
@@ -109,19 +116,18 @@ const validateBtcAddress = (address) => {
     return false;
   }
 
-  return addressTypes[version]
-    ? Object.assign({ address, bech32: false }, addressTypes[version])
+  return addressTypes[version] ? Object.assign({ address, bech32: false }, addressTypes[version])
     : false;
 };
 
 const strictValidation = (address, network) => {
   const validated = validateBtcAddress(address);
-  if (!validated) return false;
+  if (!validated) { return false; }
   if (network) {
-    if (validated.network !== network) return false;
+    if (validated.network !== network) { return false; }
     return true;
   }
   return validated;
 };
 
-export default strictValidation;
+module.exports = strictValidation;

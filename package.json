@@ -1,6 +1,6 @@
 {
   "name": "@bitcoin-api/bitcoin-address-validation",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Validate any Bitcoin address - Bech32, P2SH and P2PKH",
   "homepage": "https://github.com/bitcoin-api/bitcoin-address-validation",
   "bugs": "https://github.com/bitcoin-api/bitcoin-address-validation/issues",
@@ -31,8 +31,8 @@
     "nyc": "^14.1.1"
   },
   "dependencies": {
-    "base-x": "^3.0.6",
-    "bech32": "^1.1.3",
+    "base-x": "^3.0.8",
+    "bech32": "^1.1.4",
     "sha.js": "^2.4.11"
   }
 }
